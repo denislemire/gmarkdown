@@ -1,0 +1,4 @@
+bin/gmarkdown
+share/applications/business.generic.GMarkdown.desktop
+share/gmarkdown/vendor/mermaid.min.js
+share/icons/hicolor/scalable/apps/business.generic.GMarkdown.svg

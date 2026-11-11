@@ -1,0 +1,38 @@
+version: 2.1
+jobs:
+  freebsd-build-test-package:
+    machine:
+      image: freebsd-15.1:current
+    resource_class: freebsd.medium
+    steps:
+      - checkout
+      - run:
+          name: Install build dependencies from official latest
+          command: |
+            set -eu
+            export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+            sudo pkg install -y git gmake meson ninja pkgconf gtk4 libadwaita \
+              webkit2-gtk@60 cmark-gfm desktop-file-utils
+      - run:
+          name: Meson compile and GFM tests
+          command: |
+            set -eu
+            export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+            export GMARKDOWN_FOREGROUND=1
+            meson setup build
+            meson compile -C build
+            meson test -C build --print-errorlogs
+      - run:
+          name: Ports snapshot, stage-qa and package
+          no_output_timeout: 20m
+          command: |
+            set -eu
+            export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+            sudo -n sh tools/ci-port.sh
+      - store_artifacts:
+          path: dist
+          destination: freebsd
+workflows:
+  build:
+    jobs:
+      - freebsd-build-test-package

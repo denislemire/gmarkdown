@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/business/generic/GMarkdown">
+    <file>gmarkdown.css</file>
+    <file>app.js</file>
+    <file>vendor/highlight.min.js</file>
+    <file>vendor/github.min.css</file>
+    <file>vendor/github-dark.min.css</file>
+  </gresource>
+</gresources>

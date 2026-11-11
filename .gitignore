@@ -1,0 +1,7 @@
+/build/
+/dist/
+*~
+*.core
+.DS_Store
+meson-private/
+.ninja_*

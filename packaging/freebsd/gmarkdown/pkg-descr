@@ -1,0 +1,3 @@
+GMarkdown is a GTK4/libadwaita viewer for GitHub Flavored Markdown. It
+renders with the system WebKitGTK 6.0 engine, reloads when the file
+changes, and prints or exports PDF through WebKit's print operation.

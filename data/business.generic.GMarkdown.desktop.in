@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=GMarkdown
+Comment=GitHub-style Markdown viewer
+Exec=gmarkdown %F
+Icon=business.generic.GMarkdown
+Terminal=false
+Type=Application
+Categories=Office;Viewer;GNOME;GTK;
+MimeType=text/markdown;text/x-markdown;text/plain;
+StartupNotify=true
+Keywords=Markdown;GFM;GitHub;Preview;
