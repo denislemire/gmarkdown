@@ -1,5 +1,6 @@
 PORTNAME=	gmarkdown
 DISTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 
 MAINTAINER=	denis@generic.business

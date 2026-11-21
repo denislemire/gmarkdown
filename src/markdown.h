@@ -22,6 +22,7 @@ void gmarkdown_markdown_init(void);
 
 GMarkdownDocument *gmarkdown_document_parse(const char *markdown, gssize len);
 void gmarkdown_document_free(GMarkdownDocument *doc);
+G_DEFINE_AUTOPTR_CLEANUP_FUNC(GMarkdownDocument, gmarkdown_document_free)
 
 char *gmarkdown_document_wrap_html(const GMarkdownDocument *doc,
     const char *title, const char *theme);

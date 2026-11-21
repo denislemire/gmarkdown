@@ -13,13 +13,14 @@ meson test -C build
 
 ## Package
 
-On FreeBSD, after deps:
+Build the local deskutils/gmarkdown port as an ordinary user. Set PORTSDIR to use an existing FreeBSD ports tree outside /usr/ports.
 
 ```sh
-pkg install meson ninja pkgconf gtk4 libadwaita webkit2-gtk@60 cmark-gfm
+sudo pkg install meson ninja pkgconf gtk4 libadwaita webkit2-gtk_60 cmark-gfm desktop-file-utils git
 sh tools/ci-port.sh
+sudo pkg add ./dist/packages/All/gmarkdown-0.1.0_1.pkg
 ```
 
-CircleCI uses `freebsd-15.1:current` / `freebsd.medium` and stores `dist/*.pkg`.
+CircleCI uses `freebsd-15.1:current` / `freebsd.medium` and stores `dist/packages/All/*.pkg`.
 
 App id: `business.generic.GMarkdown`.

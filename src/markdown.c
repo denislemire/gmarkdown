@@ -262,8 +262,8 @@ gmarkdown_document_parse(const char *markdown, gssize len)
 	g_return_val_if_fail(markdown != NULL, NULL);
 	n = len < 0 ? strlen(markdown) : (gsize)len;
 	options = CMARK_OPT_DEFAULT | CMARK_OPT_FOOTNOTES |
-	    CMARK_OPT_GITHUB_PRE_LANG | CMARK_OPT_SMART |
-	    CMARK_OPT_VALIDATE_UTF8 | CMARK_OPT_UNSAFE;
+	    CMARK_OPT_SMART |
+	    CMARK_OPT_VALIDATE_UTF8;
 
 	parser = cmark_parser_new(options);
 	for (i = 0; gfm_extensions[i] != NULL; i++) {

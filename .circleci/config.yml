@@ -12,7 +12,7 @@ jobs:
             set -eu
             export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
             sudo pkg install -y git gmake meson ninja pkgconf gtk4 libadwaita \
-              webkit2-gtk@60 cmark-gfm desktop-file-utils
+              webkit2-gtk_60 cmark-gfm desktop-file-utils
       - run:
           name: Meson compile and GFM tests
           command: |
